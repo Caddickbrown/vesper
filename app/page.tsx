@@ -1,3 +1,5 @@
+import { BriefForm } from "./BriefForm";
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -131,51 +133,7 @@ export default function Home() {
           <p className="text-xs font-mono text-white/30 tracking-widest uppercase mb-4">Start a project</p>
           <h2 className="text-3xl font-semibold mb-3">Tell us what you need</h2>
           <p className="text-sm text-white/40 mb-10">A few sentences is enough. We'll reply within a few hours.</p>
-          <form
-            action="https://formspree.io/f/placeholder"
-            method="POST"
-            className="space-y-4"
-          >
-            <div className="grid grid-cols-2 gap-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your name"
-                required
-                className="col-span-1 bg-white/[0.03] border border-white/[0.08] rounded-md px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-white/20 transition-colors"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email address"
-                required
-                className="col-span-1 bg-white/[0.03] border border-white/[0.08] rounded-md px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-white/20 transition-colors"
-              />
-            </div>
-            <select
-              name="package"
-              className="w-full bg-white/[0.03] border border-white/[0.08] rounded-md px-4 py-3 text-sm text-white/60 focus:outline-none focus:border-white/20 transition-colors appearance-none"
-            >
-              <option value="">Which package? (optional)</option>
-              <option value="page">Page — £299</option>
-              <option value="tool">Tool — £999</option>
-              <option value="retainer">Retainer — £249/mo</option>
-              <option value="unsure">Not sure yet</option>
-            </select>
-            <textarea
-              name="brief"
-              placeholder="What do you need built? The more specific, the better."
-              rows={5}
-              required
-              className="w-full bg-white/[0.03] border border-white/[0.08] rounded-md px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-white/20 transition-colors resize-none"
-            />
-            <button
-              type="submit"
-              className="w-full bg-white text-black text-sm font-medium py-3 rounded-md hover:bg-white/90 transition-all duration-150"
-            >
-              Send brief
-            </button>
-          </form>
+          <BriefForm />
         </div>
       </section>
 
