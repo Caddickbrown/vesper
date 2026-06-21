@@ -7,13 +7,27 @@ const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono"
 
 export const metadata: Metadata = {
   title: "Vesper — Web tools, built in 48 hours",
-  description: "Custom web tools and applications built and shipped in 48 hours. No agencies, no drag, no surprises. Flat pricing.",
+  description: "Custom web tools and applications built and shipped in 48 hours. No agencies, no sprints, no drag. Flat pricing: £299 page, £999 tool, £249/mo retainer.",
+  metadataBase: new URL("https://buildwithvesper.com"),
   openGraph: {
     title: "Vesper — Web tools, built in 48 hours",
-    description: "Custom web tools and applications built and shipped in 48 hours.",
+    description: "Custom web tools and applications built and shipped in 48 hours. Flat pricing, no agencies.",
     url: "https://buildwithvesper.com",
     siteName: "Vesper",
     type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vesper — Web tools, built in 48 hours",
+    description: "Custom web tools and applications built and shipped in 48 hours. Flat pricing, no agencies.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://buildwithvesper.com",
   },
 };
 
