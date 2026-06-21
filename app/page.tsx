@@ -62,14 +62,14 @@ export default function Home() {
               {
                 name: "Page",
                 price: "£299",
-                delivery: "24 hours",
+                delivery: "Live in 24 hours",
                 desc: "A landing page that does its job. Clear, fast, and professional.",
                 features: ["Custom design", "Mobile-first", "Deployed to your domain", "Source code included"],
               },
               {
                 name: "Tool",
                 price: "£999",
-                delivery: "48 hours",
+                delivery: "Live in 48 hours",
                 desc: "A working web application. Form to function, with real data behind it.",
                 features: ["Full-stack application", "Admin or user interface", "Deployed and live", "Source code included"],
                 highlight: true,
@@ -77,7 +77,7 @@ export default function Home() {
               {
                 name: "Retainer",
                 price: "£249/mo",
-                delivery: "Ongoing",
+                delivery: "Ongoing, month to month",
                 desc: "Monthly development time on demand. Changes, features, fixes — just ask.",
                 features: ["Up to 20hrs/month", "Priority turnaround", "Covers any project", "Cancel any time"],
               },
@@ -97,7 +97,7 @@ export default function Home() {
                   )}
                 </div>
                 <p className="text-3xl font-semibold mb-1">{p.price}</p>
-                <p className="text-xs font-mono text-white/30 mb-4">Delivered in {p.delivery}</p>
+                <p className="text-xs font-mono text-white/30 mb-4">{p.delivery}</p>
                 <p className="text-sm text-white/40 leading-relaxed mb-6">{p.desc}</p>
                 <ul className="space-y-2 mb-8">
                   {p.features.map((f) => (
