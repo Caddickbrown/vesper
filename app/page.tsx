@@ -1,56 +1,106 @@
 import { BriefForm } from "./BriefForm";
 
+const check = (
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ flexShrink: 0 }}>
+    <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const arrow = (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const plans = [
+  {
+    name: "Page",
+    price: "£299",
+    delivery: "Live in 24 hours",
+    desc: "A landing page that does its job. Clear, fast, and professional.",
+    features: ["Custom design", "Mobile-first", "Deployed to your domain", "Source code included"],
+  },
+  {
+    name: "Tool",
+    price: "£999",
+    delivery: "Live in 48 hours",
+    desc: "A working web application. Form to function, with real data behind it.",
+    features: ["Full-stack application", "Admin or user interface", "Deployed and live", "Source code included"],
+    highlight: true,
+  },
+  {
+    name: "Retainer",
+    price: "£249/mo",
+    delivery: "Ongoing, month to month",
+    desc: "Monthly development time on demand. Changes, features, fixes — just ask.",
+    features: ["Up to 20hrs/month", "Priority turnaround", "Covers any project", "Cancel any time"],
+  },
+];
+
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main style={{ minHeight: "100vh" }}>
+
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 border-b border-white/[0.04] bg-[#090909]/80 backdrop-blur-md">
-        <span className="text-sm font-semibold tracking-widest uppercase text-white/80">Vesper</span>
-        <a
-          href="#brief"
-          className="text-sm px-4 py-2 rounded-md border border-white/10 text-white/60 hover:text-white hover:border-white/20 transition-all duration-150"
-        >
+      <nav style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        padding: "1.25rem 2rem",
+        borderBottom: "1px solid rgba(255,255,255,0.04)",
+        background: "rgba(9,9,9,0.85)", backdropFilter: "blur(12px)",
+      }}>
+        <span style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(255,255,255,0.8)" }}>
+          Vesper
+        </span>
+        <a href="#brief" style={{
+          fontSize: "0.875rem", padding: "0.5rem 1rem", borderRadius: "6px",
+          border: "1px solid rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.6)",
+          textDecoration: "none", transition: "all 0.15s",
+        }}>
           Start a project
         </a>
       </nav>
 
       {/* Hero */}
-      <section className="pt-40 pb-32 px-8">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-mono text-white/30 tracking-widest uppercase mb-8">Web tools, built to order</p>
-          <h1 className="text-6xl md:text-8xl font-semibold leading-[1.0] tracking-tight text-white mb-8">
+      <section style={{ paddingTop: "10rem", paddingBottom: "7rem" }}>
+        <div className="container">
+          <p style={{ fontSize: "0.7rem", fontFamily: "var(--font-geist-mono), monospace", color: "rgba(255,255,255,0.3)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "2rem" }}>
+            Web tools, built to order
+          </p>
+          <h1 style={{ fontSize: "clamp(3.5rem, 9vw, 7rem)", fontWeight: 600, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#fff", marginBottom: "2rem" }}>
             From brief<br />to live in<br />
-            <span className="text-white/60">48 hours.</span>
+            <span style={{ color: "rgba(255,255,255,0.55)" }}>48 hours.</span>
           </h1>
-          <p className="text-lg text-white/40 max-w-lg leading-relaxed mb-12">
+          <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.4)", maxWidth: "32rem", lineHeight: 1.7, marginBottom: "3rem" }}>
             Custom web tools, dashboards, and applications — properly built and shipped fast. No agencies, no sprints, no drag.
           </p>
-          <a
-            href="#brief"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black text-sm font-medium rounded-md hover:bg-white/90 transition-all duration-150"
-          >
-            Tell us what you need
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+          <a href="#brief" style={{
+            display: "inline-flex", alignItems: "center", gap: "0.5rem",
+            padding: "0.75rem 1.5rem", background: "#fff", color: "#000",
+            fontSize: "0.875rem", fontWeight: 500, borderRadius: "6px",
+            textDecoration: "none", transition: "opacity 0.15s",
+          }}>
+            Tell us what you need {arrow}
           </a>
         </div>
       </section>
 
       {/* How it works */}
-      <section className="px-8 py-28 border-t border-white/[0.04]">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-mono text-white/30 tracking-widest uppercase mb-20">How it works</p>
-          <div className="grid md:grid-cols-3 gap-16">
+      <section style={{ padding: "6rem 0", borderTop: "1px solid rgba(255,255,255,0.04)" }}>
+        <div className="container">
+          <p style={{ fontSize: "0.7rem", fontFamily: "var(--font-geist-mono), monospace", color: "rgba(255,255,255,0.3)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "4rem" }}>
+            How it works
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "3rem" }}>
             {[
               { n: "01", title: "Brief us", body: "Tell us what you need in a few sentences. No decks, no calls, no discovery phases." },
               { n: "02", title: "We build", body: "We design and build your tool. Most projects are done in under 48 hours." },
               { n: "03", title: "You get the keys", body: "Your tool goes live. We hand over the repo and stay on for support if you need it." },
             ].map((s) => (
               <div key={s.n}>
-                <p className="text-xs font-mono text-white/20 mb-5">{s.n}</p>
-                <h3 className="text-xl font-medium mb-3">{s.title}</h3>
-                <p className="text-sm text-white/40 leading-relaxed">{s.body}</p>
+                <p style={{ fontSize: "0.7rem", fontFamily: "var(--font-geist-mono), monospace", color: "rgba(255,255,255,0.2)", marginBottom: "1.25rem" }}>{s.n}</p>
+                <h3 style={{ fontSize: "1.1rem", fontWeight: 500, marginBottom: "0.75rem" }}>{s.title}</h3>
+                <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}>{s.body}</p>
               </div>
             ))}
           </div>
@@ -58,69 +108,42 @@ export default function Home() {
       </section>
 
       {/* Pricing */}
-      <section className="px-8 py-28 border-t border-white/[0.04]" id="pricing">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-mono text-white/30 tracking-widest uppercase mb-20">Pricing</p>
-          <div className="grid md:grid-cols-3 gap-6 items-start">
-            {[
-              {
-                name: "Page",
-                price: "£299",
-                delivery: "Live in 24 hours",
-                desc: "A landing page that does its job. Clear, fast, and professional.",
-                features: ["Custom design", "Mobile-first", "Deployed to your domain", "Source code included"],
-              },
-              {
-                name: "Tool",
-                price: "£999",
-                delivery: "Live in 48 hours",
-                desc: "A working web application. Form to function, with real data behind it.",
-                features: ["Full-stack application", "Admin or user interface", "Deployed and live", "Source code included"],
-                highlight: true,
-              },
-              {
-                name: "Retainer",
-                price: "£249/mo",
-                delivery: "Ongoing, month to month",
-                desc: "Monthly development time on demand. Changes, features, fixes — just ask.",
-                features: ["Up to 20hrs/month", "Priority turnaround", "Covers any project", "Cancel any time"],
-              },
-            ].map((p) => (
-              <div
-                key={p.name}
-                className={`rounded-xl p-7 border flex flex-col ${
-                  p.highlight
-                    ? "border-white/20 bg-white/[0.04]"
-                    : "border-white/[0.06] bg-white/[0.02]"
-                }`}
-              >
-                <div className="flex items-baseline justify-between mb-2">
-                  <h3 className="text-base font-medium">{p.name}</h3>
-                  {p.highlight && (
-                    <span className="text-xs font-mono text-white/30 uppercase tracking-widest">Popular</span>
-                  )}
+      <section style={{ padding: "6rem 0", borderTop: "1px solid rgba(255,255,255,0.04)" }} id="pricing">
+        <div className="container">
+          <p style={{ fontSize: "0.7rem", fontFamily: "var(--font-geist-mono), monospace", color: "rgba(255,255,255,0.3)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "4rem" }}>
+            Pricing
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.25rem", alignItems: "start" }}>
+            {plans.map((p) => (
+              <div key={p.name} style={{
+                borderRadius: "12px", padding: "1.75rem",
+                border: p.highlight ? "1px solid rgba(255,255,255,0.2)" : "1px solid rgba(255,255,255,0.06)",
+                background: p.highlight ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.02)",
+                display: "flex", flexDirection: "column",
+              }}>
+                <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "0.5rem" }}>
+                  <h3 style={{ fontSize: "1rem", fontWeight: 500 }}>{p.name}</h3>
+                  {p.highlight && <span style={{ fontSize: "0.65rem", fontFamily: "var(--font-geist-mono), monospace", color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: "0.15em" }}>Popular</span>}
                 </div>
-                <p className="text-4xl font-semibold mb-1">{p.price}</p>
-                <p className="text-xs font-mono text-white/30 mb-5">{p.delivery}</p>
-                <p className="text-sm text-white/40 leading-relaxed mb-6">{p.desc}</p>
-                <ul className="space-y-2.5 mb-8 flex-1">
+                <p style={{ fontSize: "2.25rem", fontWeight: 600, marginBottom: "0.25rem" }}>{p.price}</p>
+                <p style={{ fontSize: "0.7rem", fontFamily: "var(--font-geist-mono), monospace", color: "rgba(255,255,255,0.3)", marginBottom: "1.25rem" }}>{p.delivery}</p>
+                <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.6, marginBottom: "1.5rem" }}>{p.desc}</p>
+                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.625rem", marginBottom: "2rem", flex: 1 }}>
                   {p.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2.5 text-sm text-white/50">
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="shrink-0">
-                        <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      {f}
+                    <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.625rem", fontSize: "0.875rem", color: "rgba(255,255,255,0.5)" }}>
+                      {check} {f}
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#brief"
-                  className={`block text-center text-sm py-3 rounded-md font-medium transition-all duration-150 ${
-                    p.highlight
-                      ? "bg-white text-black hover:bg-white/90"
-                      : "border border-white/10 text-white/60 hover:text-white hover:border-white/20"
-                  }`}
-                >
+                <a href="#brief" style={{
+                  display: "block", textAlign: "center", fontSize: "0.875rem",
+                  padding: "0.75rem", borderRadius: "6px", fontWeight: 500,
+                  textDecoration: "none", transition: "opacity 0.15s",
+                  ...(p.highlight
+                    ? { background: "#fff", color: "#000" }
+                    : { border: "1px solid rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.6)" }
+                  ),
+                }}>
                   Get started
                 </a>
               </div>
@@ -129,23 +152,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Brief form */}
-      <section className="px-8 py-28 border-t border-white/[0.04]" id="brief">
-        <div className="max-w-4xl mx-auto">
-          <div className="max-w-xl">
-            <p className="text-xs font-mono text-white/30 tracking-widest uppercase mb-4">Start a project</p>
-            <h2 className="text-4xl font-semibold mb-3">Tell us what you need</h2>
-            <p className="text-sm text-white/40 mb-10">A few sentences is enough. We'll reply within a few hours.</p>
+      {/* Brief */}
+      <section style={{ padding: "6rem 0", borderTop: "1px solid rgba(255,255,255,0.04)" }} id="brief">
+        <div className="container">
+          <div style={{ maxWidth: "36rem" }}>
+            <p style={{ fontSize: "0.7rem", fontFamily: "var(--font-geist-mono), monospace", color: "rgba(255,255,255,0.3)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem" }}>
+              Start a project
+            </p>
+            <h2 style={{ fontSize: "2.5rem", fontWeight: 600, marginBottom: "0.75rem" }}>Tell us what you need</h2>
+            <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", marginBottom: "2.5rem" }}>
+              A few sentences is enough. We'll reply within a few hours.
+            </p>
             <BriefForm />
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="px-8 py-12 border-t border-white/[0.04]">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <span className="text-xs font-mono text-white/20 tracking-widest uppercase">Vesper</span>
-          <span className="text-xs text-white/20">Built fast. Shipped properly.</span>
+      <footer style={{ padding: "3rem 0", borderTop: "1px solid rgba(255,255,255,0.04)" }}>
+        <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <span style={{ fontSize: "0.7rem", fontFamily: "var(--font-geist-mono), monospace", color: "rgba(255,255,255,0.2)", textTransform: "uppercase", letterSpacing: "0.15em" }}>Vesper</span>
+          <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.2)" }}>Built fast. Shipped properly.</span>
         </div>
       </footer>
     </main>
