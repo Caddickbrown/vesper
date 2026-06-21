@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vesper — Web tools, built in 48 hours",
     description: "Custom web tools and applications built and shipped in 48 hours.",
-    url: "https://vesper.studio",
+    url: "https://buildwithvesper.com",
     siteName: "Vesper",
     type: "website",
   },
