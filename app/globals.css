@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-geist), sans-serif;
+  background: #090909;
+  color: #fff;
+}
+
+.font-mono {
+  font-family: var(--font-geist-mono), monospace;
+}
