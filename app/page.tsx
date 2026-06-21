@@ -62,7 +62,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section style={{ paddingTop: "10rem", paddingBottom: "7rem" }}>
+      <section style={{ paddingTop: "8rem", paddingBottom: "6rem" }}>
         <div className="container">
           <p style={{ fontSize: "0.7rem", fontFamily: "var(--font-geist-mono), monospace", color: "rgba(255,255,255,0.3)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "2rem" }}>
             Web tools, built to order
@@ -74,12 +74,7 @@ export default function Home() {
           <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.4)", maxWidth: "32rem", lineHeight: 1.7, marginBottom: "3rem" }}>
             Custom web tools, dashboards, and applications — properly built and shipped fast. No agencies, no sprints, no drag.
           </p>
-          <a href="#brief" style={{
-            display: "inline-flex", alignItems: "center", gap: "0.5rem",
-            padding: "0.75rem 1.5rem", background: "#fff", color: "#000",
-            fontSize: "0.875rem", fontWeight: 500, borderRadius: "6px",
-            textDecoration: "none", transition: "opacity 0.15s",
-          }}>
+          <a href="#brief" className="btn-primary">
             Tell us what you need {arrow}
           </a>
         </div>
